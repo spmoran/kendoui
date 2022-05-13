@@ -1472,6 +1472,11 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@progress/kendo-theme-default@^5.4.1":
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-theme-default/-/kendo-theme-default-5.4.1.tgz#f245dcc64b83cfc4f4453a41914514b4ab3ba3ce"
+  integrity sha512-rJBWn3R8Pmyr4VpDI9uQeRYToZZCNC0b/HDKXMrjrzVxloUz9UzJ9k9XIMwUG2LvDX+Ks1PrmH69heZj2Uo0Gg==
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz#04bc0608f4aa4b2e4b1aebf284344d0f68fda283"
