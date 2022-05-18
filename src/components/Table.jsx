@@ -23,27 +23,23 @@ const Table = (props) => {
 
   const onDataStateChange = (event) => {
     setDataResult(process(testData, event.dataState));
-
+    console.log("data state firing");
     props.setTableState(event.dataState);
-
-    /*  setDataState((prevState) => {
-          const stateData = { ...prevState };
-          stateData.group = event.dataState.group;
-          stateData.skip = event.dataState.skip;
-          stateData.take = event.dataState.take;
-          stateData.filter = event.dataState.filter;
-          if (dataState.sort.length > 1){
-            stateData.sort = event.dataState.sort
-          }
-        });
-        */
   };
 
   const exportExcel = (props) => {
     if (_export.current !== null) {
-      console.log(dataResult);
       _export.current.save();
     }
+  };
+
+  const onCitizenGenderClicked = () => {
+    props.setTableState((prevState) => {
+      const stateData = { ...prevState };
+      stateData.group = [{ field: "Citizenship" }, { field: "gender" }];
+      setDataResult(process(testData, stateData));
+      return stateData;
+    });
   };
   return (
     <div style={{ margin: "10px 30px" }}>
@@ -75,6 +71,14 @@ const Table = (props) => {
               onClick={exportExcel}
             >
               Export to Excel
+            </button>
+
+            <button
+              title="citizenGenderGroupBtn"
+              className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary"
+              onClick={onCitizenGenderClicked}
+            >
+              Group By Citizen & Gender
             </button>
           </GridToolbar>
           <GridColumn field="id" title="ID" width="90" filterable={false} />
